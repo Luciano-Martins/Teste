@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+      function fibonacci(n) {
+        let sequence = [0, 1];
+        while (sequence.length < n) {
+          sequence.push(
+            sequence[sequence.length - 1] + sequence[sequence.length - 2]
+          );
+        }
+        return sequence;
+      }
+
+      function verificaNumero(numero) {
+        let sequence = fibonacci(numero + 1);
+        if (sequence.includes(numero)) {
+          return `O número ${numero} pertence à sequência de Fibonacci.`;
+        } else {
+          return `O número ${numero} não pertence à sequência de Fibonacci.`;
+        }
+      }
+
+      let numero = parseInt(prompt("Digite um número: "));
+      alert(verificaNumero(numero));
+    </script>
+  </body>
+</html>
